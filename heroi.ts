@@ -1,26 +1,25 @@
-class Heroi{
-    public nome: string = ''
-    forca: number = 100
-    nivel: number = 1
-     constructor(nome:string, forca: number){
+class Heroi extends Personagem{
 
-        this.nome = nome
-        this.forca = forca
-        this.nivel = 1
+    comportamento: string
+     constructor(nome:string, forca: number, vida:number, comportamento: string){
+      super(nome,forca,vida)
+        this.comportamento = comportamento
      }
 
 
 
 
-    olharDestemido(){
+    olhar(){
         console.log("Olhar Destemido!!!")
 
 
 
     }
 }
-  let heroi1 = new Heroi("Perseu", 300)
+  let heroi1 = new Heroi("Perseu",100,300, "veloz")
+  heroi1.ataque()
   console.log(heroi1)
   
-  let heroi2 = new Heroi("Seiya",1000)
+  let heroi2 = new Heroi("Seiya",250,1000, " ferocidade")
+  heroi2.exalar()
    console.log(heroi2)
